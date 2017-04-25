@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+}
+
+#filter>ul {
+    list-style-type: none;
+    padding: 10px;
+    margin: 0;
+    font-family: sans-serif;
+    border: 1px solid lightgrey;
+}
+
+#filter>ul:after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+#filter>ul>li {
+    float: left;
+    position: relative;
+    padding-left: 60px;
+    padding-top: 7px;
+    margin-left: 5px;
+    height: 35px;
+    border: 1px solid grey;
+    border-radius: 3px;
+    overflow: hidden;
+    width: 200px;
+    background: linear-gradient(to bottom, rgba(149,149,149,1) 0%,rgba(13,13,13,1) 46%,rgba(1,1,1,1) 50%,rgba(10,10,10,1) 53%,rgba(78,78,78,1) 76%,rgba(56,56,56,1) 87%,rgba(27,27,27,1) 100%);
+    font-size: 15px;
+    font-family: serif;
+    color: white;
+}
+
+#filter>ul>li:hover {
+    overflow: visible;
+    cursor: pointer;
+}
+
+#filter>ul>li>label {
+    cursor: pointer;
+    margin-left: -10px;
+}
+
+#filter>ul>li>ul>li>input {
+    cursor: pointer;
+    padding: 10px;
+}
+
+#filter>ul>li>ul {
+    background: linear-gradient(to bottom, rgba(149,149,149,1) 0%,rgba(13,13,13,1) 46%,rgba(1,1,1,1) 50%,rgba(10,10,10,1) 53%,rgba(78,78,78,1) 76%,rgba(56,56,56,1) 87%,rgba(27,27,27,1) 100%);;
+    border: 1px solid lightgrey;
+    margin-top: 0;
+    border-radius: 2px;
+}
+
+#filter>ul>li>ul>li {
+    display: block;
+    margin-left: -40px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 10px;
+}
+
+#filter>ul>li>ul>li:hover {
+    background-color: #0094ff;
+    cursor: pointer;
+}
+
+#filter>ul>li>ul>li:active {
+    background-color: blue;
+}
+
+#btn-filter {
+    margin-left: 50px;
+    background: linear-gradient(to bottom, rgba(149, 149, 149, 1) 0%, rgba(13, 13, 13, 1) 46%, rgba(1, 1, 1, 1) 50%, rgba(10, 10, 10, 1) 53%, rgba(78, 78, 78, 1) 76%, rgba(56, 56, 56, 1) 87%, rgba(27, 27, 27, 1) 100%);
+    font-size: 15px;
+    font-family: serif;
+    color: white;
+}
+
+#btn-filter:active {
+    background: linear-gradient(to bottom, rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%);
+}
+
+#filter-values {
+    display: block;
+}
+
+.author-value-item {
+    display: block;
+    width: 200px;
+    border: 1px solid grey;
+    margin-left: 15px;
+    clear: both;
+    padding-left: 10px;
+}
+
+.tag-value-item {
+    display: block;
+    width: 200px;
+    border: 1px solid grey;
+    margin-left: 220px;
+}
+
+.author-value-item>label {
+    border: 1px solid green;
+    float: right;
+    cursor: pointer;
+}
