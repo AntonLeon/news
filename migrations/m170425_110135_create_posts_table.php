@@ -13,7 +13,7 @@ class m170425_110135_create_posts_table extends Migration
     public function safeUp()
     {
         $this->createTable('posts', [
-            'id' => 'pk',
+            'post_id' => 'pk',
             'thumbnail_img' => 'string NOT NULL',
             'header_img' => 'string NOT NULL',
             'title' => 'string NOT NULL',
