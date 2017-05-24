@@ -42,8 +42,7 @@ class SiteController extends AppController
         $banners = Banner::orderLimitBanner('id DESC', 2);
         $featuredNewsCount = Post::arrayWhereOrderCountPost(['actives' => 1], 'date DESC');
         $latestPosts = Post::whereOrderLimitOffsetPost(['actives' => 1], 'post_id DESC', 3, 1);
-        $latestPost = Post::whereOrderLimitPost(['actives' => 1], 'post_id DESC', 1);
-
+        $latestPost = Post::latestPost(['actives' => 1], 'post_id DESC', 1);
 
         return $this->render('index', compact('latestPost', 'latestPosts', 'featuredNews', 'sliders', 'banners', 'featuredNewsCount'));
     }

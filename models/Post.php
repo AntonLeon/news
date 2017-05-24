@@ -10,6 +10,7 @@ namespace app\models;
 
 
 use yii\db\ActiveRecord;
+use yii\helpers\Html;
 
 
 class Post extends ActiveRecord
@@ -41,6 +42,15 @@ class Post extends ActiveRecord
             ->orderBy($order)
             ->limit($limit)
             ->all();
+    }
+
+    public static function latestPost ($where = [], $order = '', $limit)
+    {
+        return Post::find()
+            ->where($where)
+            ->orderBy($order)
+            ->limit($limit)
+            ->one();
     }
 
     public static function whereCountPosts($where = [])
