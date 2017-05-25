@@ -111,7 +111,6 @@ $this->title = 'News';
 
             </div>
             <?= Html::a('See all', Url::to(['news/all', 'page' => 1]), ['class' => 'news-latest-link btn btn-success']) ?>
-
                 <?php } else { ?>
 
                     <div class="news-latest-header">

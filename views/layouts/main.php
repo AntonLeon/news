@@ -33,7 +33,7 @@ $links_count = \app\models\Footer::find()->count();
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => Html::img($logo[0]->logo_img, ['height' => '70px', 'width' => '100px']),
+        'brandLabel' => Html::img('web/images/logo.png', ['height' => '70px', 'width' => '100px']),
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -76,7 +76,11 @@ $links_count = \app\models\Footer::find()->count();
 
 <footer class="footer"  style="height: 80px;">
     <div class="container">
+        <?php if (!empty ($logo)) { ?>
         <p class="pull-left"><?= Html::img($logo[0]->logo_img, ['height' => '30px', 'width' => '70px']) ?></p>
+        <?php } else { ?>
+            <p class="pull-left"><?= Html::img('web/images/default/noimage_logo.png', ['height' => '30px', 'width' => '70px']) ?></p>
+        <?php } ?>
         <ul style="margin-left: 100px; margin-top: -10px; height: 68px">
             <?php foreach ($links as $footer_link): ?>
             <li style="display: inline-block; width: 30%; text-align: left"><?= $footer_link->footer_link ?></li>
