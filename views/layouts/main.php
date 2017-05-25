@@ -25,7 +25,10 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <?php
-$logo = \app\models\Logo::find()->limit(1)->orderBy('id')->all();
+$logo = \app\models\Logo::find()->limit(1)->orderBy('id')->one();
+if (empty ($logo)) {
+    $logoHead = 'web/images/default/noimage_logo.png';
+}
 $links = \app\models\Footer::find()->orderBy('id DESC')->limit(9)->all();
 $links_count = \app\models\Footer::find()->count();
 ?>
@@ -33,7 +36,7 @@ $links_count = \app\models\Footer::find()->count();
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => Html::img('web/images/logo.png', ['height' => '70px', 'width' => '100px']),
+        'brandLabel' => Html::img($logoHead, ['height' => '70px', 'width' => '100px']),
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -77,7 +80,7 @@ $links_count = \app\models\Footer::find()->count();
 <footer class="footer"  style="height: 80px;">
     <div class="container">
         <?php if (!empty ($logo)) { ?>
-        <p class="pull-left"><?= Html::img($logo[0]->logo_img, ['height' => '30px', 'width' => '70px']) ?></p>
+        <p class="pull-left"><?= Html::img($logo->logo_img, ['height' => '30px', 'width' => '70px']) ?></p>
         <?php } else { ?>
             <p class="pull-left"><?= Html::img('web/images/default/noimage_logo.png', ['height' => '30px', 'width' => '70px']) ?></p>
         <?php } ?>
